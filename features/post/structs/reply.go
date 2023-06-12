@@ -1,6 +1,8 @@
 package post
 
-type TabReply struct {
-	ArrReply [NMAX]string
-	N        int
+type Reply struct {
+	ID        string
+	Message   string
+	User      string
+	UserIndex int
 }

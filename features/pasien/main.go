@@ -3,7 +3,9 @@ package pasien
 import (
 	//
 	"fmt"
-	"projek/common"
+	common "projek/common"
+
+	doctorStruct "projek/features/dokter/structs"
 
 	//
 	pasienFunc "projek/features/pasien/functions"
@@ -16,7 +18,7 @@ import (
 	postStruct "projek/features/post/structs"
 )
 
-func Main(arrPasien *pasienStruct.TabPasien, arrPost *postStruct.TabPost) {
+func Main(arrPasien *pasienStruct.TabPasien, arrPost *postStruct.TabPost, arrDoctor *doctorStruct.TabDokter) {
 	var input int
 	pasienMenu.ShowAuthPasienMenu()
 	// Terima inputan dari user
@@ -32,11 +34,12 @@ func Main(arrPasien *pasienStruct.TabPasien, arrPost *postStruct.TabPost) {
 			common.ResetConsole()
 		} else if input == 2 {
 			// Login
-			if pasienFunc.LoginPasien(arrPasien) {
+			PatientIndex := pasienFunc.LoginPasien(arrPasien)
+			if PatientIndex != -1 {
 				// Jika login berhasil
 				common.ResetConsole()
 
-				post.Main(arrPost)
+				post.Main(arrPost, arrDoctor, arrPasien, "pasien", PatientIndex)
 			} else {
 				// Jika login gagal
 				common.ResetConsole()

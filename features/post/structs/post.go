@@ -1,20 +1,22 @@
 package post
 
-import (
-	pasienStruct "projek/features/pasien/structs"
-)
-
 const NMAX int = 20
 
 type Post struct {
-	ArrReply            [NMAX]string
+	ArrReply            [NMAX]Reply
 	Nreply              int
 	TxtAddPost, TagPost string
-	ID                  string
-	User                pasienStruct.Pasien
+	ID                  int
+	User                string
+	UserIndex           int
 }
 
 type TabPost struct {
 	ArrPost [NMAX]Post
 	N       int
+}
+
+type Tag struct {
+	TxtTag string
+	N      int
 }
