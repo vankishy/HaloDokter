@@ -1,2 +1,2 @@
-# HaloDokter
-Aplikasi yang dibuat untuk memenuhi penilaian tugas besar projek mata kuliah Algoritma Pemrograman
+# Halo Dokter
+Aplikasi ini dibuat untuk memenuhi nilai Tugas Besar Algoritma Pemrograman.
